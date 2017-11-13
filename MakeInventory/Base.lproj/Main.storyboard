@@ -121,12 +121,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoO-k9-egp">
+                                <rect key="frame" x="0.0" y="244" width="375" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OH8-O7-eKv" firstAttribute="top" secondItem="X0F-RL-Igd" secondAttribute="top" constant="70" id="5Ld-V4-7yC"/>
                             <constraint firstItem="X0F-RL-Igd" firstAttribute="trailing" secondItem="OH8-O7-eKv" secondAttribute="trailing" constant="15" id="ALq-yv-aeC"/>
                             <constraint firstItem="OH8-O7-eKv" firstAttribute="leading" secondItem="X0F-RL-Igd" secondAttribute="leading" constant="15" id="DRM-i4-ZhG"/>
+                            <constraint firstItem="AoO-k9-egp" firstAttribute="top" secondItem="OH8-O7-eKv" secondAttribute="bottom" constant="15" id="cOb-0K-W8p"/>
+                            <constraint firstItem="AoO-k9-egp" firstAttribute="trailing" secondItem="X0F-RL-Igd" secondAttribute="trailing" id="e6v-6v-RaO"/>
+                            <constraint firstItem="AoO-k9-egp" firstAttribute="leading" secondItem="X0F-RL-Igd" secondAttribute="leading" id="zKQ-00-LPx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X0F-RL-Igd"/>
                     </view>
@@ -138,6 +144,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="departmentPicker" destination="AoO-k9-egp" id="NIX-bQ-Iag"/>
                         <outlet property="inventoryNameField" destination="l2f-NL-QCt" id="zRA-Jm-Oz1"/>
                         <outlet property="inventoryQuantityField" destination="nxw-r5-g6J" id="mGo-rl-Hh6"/>
                     </connections>

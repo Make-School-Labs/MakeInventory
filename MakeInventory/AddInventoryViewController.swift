@@ -11,11 +11,20 @@ import UIKit
 class AddInventoryViewController: UIViewController {
     let coreDataStack = CoreDataStack.instance
     
+    @IBOutlet weak var departmentPicker: UIPickerView!
     @IBOutlet weak var inventoryNameField: UITextField!
     @IBOutlet weak var inventoryQuantityField: UITextField!
+    var departments = [
+        "HR",
+        "Instructors",
+        "Finance"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        departmentPicker.delegate = self
+        departmentPicker.dataSource = self
     }
     
     @IBAction func savePressed(_ sender: Any) {
@@ -33,7 +42,10 @@ class AddInventoryViewController: UIViewController {
             context: coreDataStack.privateContext
         )
         
-        department.name = "Groceries"
+        let selectedRow = departmentPicker.selectedRow(inComponent: 0)
+        let departmentName = departments[selectedRow]
+        
+        department.name = departmentName
         
         inv.department = department
         
@@ -42,4 +54,22 @@ class AddInventoryViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension AddInventoryViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return departments.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return departments[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
 }
