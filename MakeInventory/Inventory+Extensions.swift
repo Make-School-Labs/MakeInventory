@@ -9,12 +9,4 @@
 import Foundation
 import CoreData
 
-extension Inventory {
-    convenience init(context: NSManagedObjectContext) {
-        
-        let entityDescription = NSEntityDescription.entity(forEntityName: "Inventory", in:
-            context)!
-        
-        self.init(entity: entityDescription, insertInto: context)
-    }
-}
+extension Inventory: CoreDataInitializable {}

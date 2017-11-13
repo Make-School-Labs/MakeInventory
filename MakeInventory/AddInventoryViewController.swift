@@ -21,10 +21,21 @@ class AddInventoryViewController: UIViewController {
     @IBAction func savePressed(_ sender: Any) {
         guard let name = inventoryNameField.text, let quantity = Int64(inventoryQuantityField.text!) else {return}
         
-        let inv = Inventory(context: coreDataStack.privateContext)
+        // Inventories
+        let inv = Inventory(
+            context: coreDataStack.privateContext
+        )
         
         inv.name = name
         inv.quantity = quantity
+        
+        let department = Department(
+            context: coreDataStack.privateContext
+        )
+        
+        department.name = "Groceries"
+        
+        inv.department = department
         
         coreDataStack.saveTo(context: coreDataStack.privateContext)
         

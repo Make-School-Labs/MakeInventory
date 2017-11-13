@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051B6C131FBA24E2001FF58C /* Department+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B6C121FBA24E2001FF58C /* Department+Extensions.swift */; };
+		051B6C151FBA2519001FF58C /* CoreDataInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B6C141FBA2519001FF58C /* CoreDataInitializable.swift */; };
 		055B950C1FB932B800F3A369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B950B1FB932B800F3A369 /* AppDelegate.swift */; };
 		055B950E1FB932B800F3A369 /* InventoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B950D1FB932B800F3A369 /* InventoriesViewController.swift */; };
 		055B95111FB932B800F3A369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055B950F1FB932B800F3A369 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		051B6C121FBA24E2001FF58C /* Department+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Department+Extensions.swift"; sourceTree = "<group>"; };
+		051B6C141FBA2519001FF58C /* CoreDataInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInitializable.swift; sourceTree = "<group>"; };
 		055B95081FB932B800F3A369 /* MakeInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055B950B1FB932B800F3A369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		055B950D1FB932B800F3A369 /* InventoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoriesViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				055B951A1FB932B800F3A369 /* Info.plist */,
 				055B95121FB932B800F3A369 /* MakeInventory.xcdatamodeld */,
 				055B95241FB9673C00F3A369 /* Inventory+Extensions.swift */,
+				051B6C141FBA2519001FF58C /* CoreDataInitializable.swift */,
+				051B6C121FBA24E2001FF58C /* Department+Extensions.swift */,
 			);
 			path = MakeInventory;
 			sourceTree = "<group>";
@@ -150,8 +156,10 @@
 			files = (
 				055B95141FB932B800F3A369 /* MakeInventory.xcdatamodeld in Sources */,
 				055B950E1FB932B800F3A369 /* InventoriesViewController.swift in Sources */,
+				051B6C151FBA2519001FF58C /* CoreDataInitializable.swift in Sources */,
 				055B950C1FB932B800F3A369 /* AppDelegate.swift in Sources */,
 				055B95211FB9491100F3A369 /* CoreDataStack.swift in Sources */,
+				051B6C131FBA24E2001FF58C /* Department+Extensions.swift in Sources */,
 				055B95251FB9673C00F3A369 /* Inventory+Extensions.swift in Sources */,
 				055B95231FB964F800F3A369 /* AddInventoryViewController.swift in Sources */,
 			);
