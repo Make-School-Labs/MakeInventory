@@ -31,10 +31,7 @@ public final class CoreDataStack {
     }()
     
     lazy var privateContext: NSManagedObjectContext = {
-        let cont = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        cont.persistentStoreCoordinator = persistentContainer.persistentStoreCoordinator
-        
-        return cont
+        return persistentContainer.newBackgroundContext()
     }()
     
     func saveTo(context: NSManagedObjectContext) {
