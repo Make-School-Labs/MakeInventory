@@ -9,7 +9,7 @@
 import UIKit
 
 class AddInventoryViewController: UIViewController {
-    let coreDataStack = CoreDataStack.instance
+    let coreDataStack = CoreDataManger(name: CoreDataManagerName)
     
     @IBOutlet weak var departmentPicker: UIPickerView!
     @IBOutlet weak var inventoryNameField: UITextField!
@@ -32,14 +32,14 @@ class AddInventoryViewController: UIViewController {
         
         // Inventories
         let inv = Inventory(
-            context: coreDataStack.privateContext
+            context: coreDataStack.backgroundContext
         )
         
         inv.name = name
         inv.quantity = quantity
         
         let department = Department(
-            context: coreDataStack.privateContext
+            context: coreDataStack.backgroundContext
         )
         
         let selectedRow = departmentPicker.selectedRow(inComponent: 0)
@@ -49,7 +49,7 @@ class AddInventoryViewController: UIViewController {
         
         inv.department = department
         
-        coreDataStack.saveTo(context: coreDataStack.privateContext)
+        coreDataStack.saveTo(context: coreDataStack.backgroundContext)
         
         self.navigationController?.popViewController(animated: true)
     }

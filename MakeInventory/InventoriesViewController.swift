@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class InventoriesViewController: UIViewController {
-    let stack = CoreDataStack.instance
+    let stack = CoreDataManger(name: CoreDataManagerName)
     
     @IBOutlet weak var tableView: UITableView!
     var inventories = [Inventory]()
